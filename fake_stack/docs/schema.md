@@ -18,42 +18,61 @@ Work_history| text      | string,
 user_id     | integer   | not null, foreign key (references users), indexed
 Current City| string    | not null,
 Relationship| string    |
+image_url   | string    |
 
-### Work_history
+## Work_history
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-Company     | string    | not null
+Organization| string    | not null
 Position    | string    |
 user_id     | integer   | not null, foreign key (references users), indexed
 City/Town   | string    |
 Description | text      |
-Start Date  |           |
-End Date    |           |
+Start Date  | Date      |
+End Date    | Date      |
+
+## Education_history
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+School      | string    | not null
+Graduated   | Boolean   | default true
+user_id     | integer   | not null, foreign key (references users), indexed
+Type        | string    | high_school, college
+City/Town   | string    |
+Focus       | text      |
+Start Date  | Date      |
+End Date    | Date      |
 
 
-
-
-
-
-
-## notebooks
+## Comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    |
+post_id     | integer   | foreign key (references Posts), indexed
+Content     | text      | not null
 
-## tags
+## Friend_requests
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
+requester_id| integer   | not null, foreign key (references users), unique in context of recipient_id
+recipient_id| integer   | not null, foreign key (references users)
+Approved    | Boolean   | not null, default: false
 
-## taggings
+## Taggings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
+comment_id  | integer   | not null, foreign key (references comments), unique in context of user_id
+user_id     | integer   | not null, foreign key (references users), indexed
+tagger_id   | integer   | not null, foreign key (references users)
+
+## Posts
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+author_id   | integer   | not null, foreign key (references users), indexed
+Content     | text      | not null
