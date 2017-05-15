@@ -1,6 +1,6 @@
 # Schema Information
 
-## users
+## Users
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -13,12 +13,30 @@ session_token   | string    | not null, indexed, unique
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-Biography   | string    | not null
-Work_history| text      | string,
+biography   | string    | not null
+current_city| string    |
 user_id     | integer   | not null, foreign key (references users), indexed
-Current City| string    | not null,
-Relationship| string    |
+home_town   | string    |
 image_url   | string    |
+skills      | string    | default: [], array
+
+## Places
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | string    | not null, foreign key (references users), indexed
+city        | string    | not null,
+country     | string    | not null,
+
+## Contact Information
+column name  | data type | details
+-------------|-----------|-----------------------
+id           | integer   | not null, primary key
+user_id      | string    | not null, foreign key (references users), indexed
+Mobile Phones| string    | default: [], array
+country      | string    | not null,
+websites     | string    | default: [], array
+
 
 ## Work_history
 column name | data type | details
@@ -75,4 +93,4 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
-Content     | text      | not null
+content     | text      | not null

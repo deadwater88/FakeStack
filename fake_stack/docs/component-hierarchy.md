@@ -8,73 +8,46 @@
 
 **HeaderNavContainer**
   - HeaderNav
+    + SearchContainer
 
 **NewsFeedContainer**
- - Sidebar
  - NewsFeed
+  + Side bar
   + Posts
     + Comments
+    + CommentForm
 
 **PostsContainer**
- - NotesHeader
-  * NoteIndex
+ - Posts
 
 **ProfileContainer**
  - NotebookHeader
   + NoteIndex
 
-**SearchResultsContainer**
- - Search
- - NoteIndex
+**SearchContainer**
+ - Searchform
+ - SearchList
 
-**TagContainer**
- - NotebookHeader
-  + NoteIndex
+**EditProfileContainer**
+ - EditProfileForm
+  + Subforms
 
-**NoteIndex**
- - NoteIndexItem
-  + NoteDetail
-    + NoteTools
-    - NotebookSearch
-    - Tags
-      - Tag
-    * Note
+**FriendsContainer**
+ - FriendsContainer
 
-**NewNoteContainer**
- - NewNote
-  - RTETools
-  - NewNoteButton
 
-**Search**
 
-**NewNotebook**
- - NewNotebook
-
-**NewTag**
- - NewTag
-
-**NotebookSearch**
- + AutoSearch
- * AutoSearchResults
-
-**TagsSearch**
- + AutoSearch
- * AutoSearchResults
 
 ## Routes
 
 |Path   | Component   |
 |-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
-| "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
-| "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
-| "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
-| "/new-tag" | "NewTag" |
-| "/tag-search" | "TagSearch" |
-| "/notebook-search" | "NotebookSearch" |
+| "/root" | "AuthFormContainer" |
+| "/root" | "AuthFormContainer" |
+| "/root" | "HeaderNav" |
+| "/profile/:userid" | "ProfileContainer" |
+| "/profile/:userid/friends" | "FriendsContainer" |
+| "/profile/:userid/edit" | "EditProfileContainer" |
+| "/profile/:userid/edit/:profileprop" | "subform" |
+| "/home/ | "NewsFeedContainer" |
+| "/home/ | "NewsFeedContainer" |
