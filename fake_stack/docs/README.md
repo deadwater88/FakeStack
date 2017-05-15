@@ -11,16 +11,16 @@ Doc links:
 
 [Wireframe](/wireframes)
 
-Heroku Link
+[Heroku Link](https://powerful-forest-53993.herokuapp.com/)
 
 Minimum Viable Product:
 
 1. New account creation, login, and guest/demo login
 2. A production README, replacing this README (NB: check out the sample [production README][production-readme] -- you'll write this later)
 3. Hosting on Heroku
-Trello: https://trello.com/b/tCA9Md8x/facebook-clone-fullstack
-Github: https://github.com/deadwater88/FakeStack
-Heroku: https://powerful-forest-53993.herokuapp.com/
+[Trello](https://trello.com/b/tCA9Md8x/facebook-clone-fullstack)
+[Github](https://github.com/deadwater88/FakeStack)
+[Heroku](https://powerful-forest-53993.herokuapp.com/)
 
 4. Profiles
   * Ability to create and edit/update a profile
